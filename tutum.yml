@@ -1,0 +1,14 @@
+test-meanjs:
+  image: 'siregghead/meanjs:latest'
+  expose:
+    - '35729'
+  links:
+    - 'test-mongo:db_1'
+  ports:
+    - '3000'
+  tags:
+    - srv1
+test-mongo:
+  image: 'mongo:latest'
+  tags:
+    - srv1
